@@ -4,6 +4,8 @@
 \usepackage[utf8]{inputenc}	% lettere accentate da tastiera
 \usepackage[italian]{babel}	% per scrivere in italiano
 
+\usepackage{listings}
+
 \title{Xml e Ajax}
 \author{Matteo Scarpa\\ 845087}
 \date{}
@@ -21,10 +23,35 @@
 
 \begin{frame}
    \frametitle{Argomenti}
-   \begin{itemize}
-      \item XMl
-      \item AJAX
-   \end{itemize}
+   \tableofcontents[pausesections]
+\end{frame}
+
+\section{XML}
+
+\subsection{Cos'è XML}
+\begin{frame}
+    \frametitle{Cos'è XML}
+    \begin{itemize}
+        \item Linguaggio di markup
+        \item e\textbf{X}tensible \textbf{M}arkup \textbf{L}anguage
+        \item È derivato dallo standard SGML (ISO 8879)
+        \item Viene usato per salvare o formattare informazioni
+        \item Viene affiancato da DTD e XML Schema
+    \end{itemize}
+\end{frame}
+
+\subsection{Com'è strutturato}
+
+\begin{frame}[fragile]
+    \frametitle{Com'è strutturato XML}
+    \begin{verbatim}
+<DataModelElement xsi:type="webml:Entity" id="0" >       
+    <Attribute id="1" name="OID" type="OID" /> 
+    <Attribute id="2" name="Name"/> 
+    <Attribute id="3" name="Psw"/> 
+    <Attribute id="4" name="Email" contentType=""/> 
+</DataModelElement> 
+    \end{verbatim}
 \end{frame}
 
 \end{document}
