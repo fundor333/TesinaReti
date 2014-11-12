@@ -4,7 +4,24 @@
 \usepackage[utf8]{inputenc}	% lettere accentate da tastiera
 \usepackage[italian]{babel}	% per scrivere in italiano
 
-\title{Xml e Ajax}
+%*********************************************************************************
+% Impostazioni di biblatex
+%*********************************************************************************
+\usepackage[hyperref=true,natbib=true,style=alphabetic,
+citestyle=verbose-trad1,
+sorting=nyt,
+autocite=footnote,
+%autocite=inline,
+%citestyle=authoryear-ibid,  %% Eventually will use this
+,backend=bibtex]{biblatex}
+\usepackage{hyperref}
+\renewcommand\bibname{Sitografia e riferimenti bibliografici}
+%\renewcommand{\refname}{top}
+\bibliography{bibliografia} 
+
+\usepackage{graphicx}
+
+\title{\includegraphics[width=120mm]{logo-unive.png} \\ Xml e Ajax}
 \author{Matteo Scarpa\\ 845087}
 \date{}
 
@@ -17,6 +34,9 @@ XML è un \textit{linguaggio di markup} e XML sta per e\textbf{X}tensible \textb
 È derivato dallo standard SGML (ISO 8879)\footnote{Lo Standard Generalized Markup Language (SGML), è un metalinguaggio definito come standard ISO (ISO 8879:1986 SGML) avente lo scopo di definire linguaggi da utilizzare per la stesura di testi destinati ad essere trasmessi ed archiviati con strumenti informatici, ossia per la stesura di documenti in forma leggibile da computer (machine readable form).} 
 ed è pensato per l'utilizzo su larga scala ed è nato per uso legato alla rete anche se poi esteso anche a formato per il salvataggio di file.
 
+\chapter{AJAX}
+AJAX è una tecnica di sviluppo software basato sullo scambio dati in backgound tra il client e il server. 
 
+\nocite{w3c}\printbibliography
 
 \end{document}
