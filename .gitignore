@@ -4,3 +4,9 @@
 Beamer/.texpadtmp
 .dat0ee8.109
 Documentazione/.texpadtmp
+*.aux
+*.bbl
+*.blg
+*.dvi
+*.out
+*/.texpadtmp
