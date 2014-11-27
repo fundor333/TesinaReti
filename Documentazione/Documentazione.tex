@@ -18,7 +18,7 @@ autocite=footnote,
 \usepackage{hyperref}
 \renewcommand\bibname{Sitografia e riferimenti bibliografici}
 %\renewcommand{\refname}{top}
-\bibliography{bibliografia} 
+\bibliography{bibliografiareti.bib} 
 
 \usepackage{graphicx}
 
@@ -31,12 +31,16 @@ autocite=footnote,
 \maketitle
 
 \chapter{XML}
-XML è un \textit{linguaggio di markup} e XML sta per e\textbf{X}tensible \textbf{M}arkup \textbf{L}anguage ovvero un linguaggio che consente di definire gli elementi di un documento attraverso meccanismi sintattici.
-È derivato dallo standard SGML (ISO 8879)\footnote{Lo Standard Generalized Markup Language (SGML), è un metalinguaggio definito come standard ISO (ISO 8879:1986 SGML) avente lo scopo di definire linguaggi da utilizzare per la stesura di testi destinati ad essere trasmessi ed archiviati con strumenti informatici, ossia per la stesura di documenti in forma leggibile da computer (machine readable form).} 
-ed è pensato per l'utilizzo su larga scala ed è nato per uso legato alla rete anche se poi esteso anche a formato per il salvataggio di file.
+XML è un \textit{linguaggio di markup} e XML sta per e\textbf{X}tensible \textbf{M}arkup \textbf{L}anguage\footnote{vedi \cite{site:w3c}} ovvero un linguaggio che consente di definire gli elementi di un documento attraverso meccanismi sintattici.
+È derivato dallo standard SGML (ISO 8879) ed è pensato per l'utilizzo su larga scala ed è nato per uso legato alla rete anche se poi esteso anche a formato per il salvataggio di file.
 
 \section{Scopo}
-XML si prefigge di essere una versione semplificata di Standard Generalized Markup Language, un metalinguaggio pensato per definire documenti leggibili dal computer. Da questo linguaggio XML prende il DTD (o Document Type Definition) che è un documento che definisce le componenti ammesse e come devono essere strutturati 
+XML si prefigge di essere una versione semplificata di Standard Generalized Markup Language, o SGML, che è un metalinguaggio definito come standard ISO (ISO 8879:1986 SGML) avente lo scopo di definire linguaggi da utilizzare per la stesura di testi destinati ad essere trasmessi ed archiviati con strumenti informatici, ossia per la stesura di documenti in forma leggibile da computer (machine readable form). Da questo linguaggio XML prende il DTD (o Document Type Definition) che è un documento che definisce le componenti ammesse e come devono essere strutturati.
+
+Successivamente è stato introdotto l' XML Schema come linguaggio di strutturazione e definizione dei documenti XML che rese obsoleto l'uso dei DTD.
+
+
+La funzione dell'XML è quella di formattare informazioni leggibili sia dalla macchina che dall'uomo che potessero essere inviate attraverso la rete.
 
 \chapter{AJAX}
 AJAX è una tecnica di sviluppo software basato sullo scambio dati in backgound tra il client e il server. 
