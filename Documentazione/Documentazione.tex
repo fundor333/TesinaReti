@@ -8,13 +8,16 @@
 %*********************************************************************************
 % Impostazioni di biblatex
 %*********************************************************************************
-\usepackage[bibstyle=alphabetic,citestyle=alphabetic,,backend=bibtex]{biblatex}
+\usepackage[bibstyle=alphabetic,citestyle=alphabetic,backend=bibtex]{biblatex}
 
 \bibliography{bibliografiareti} 
 
-\DeclareBibliographyCategory{libri}\DeclareBibliographyCategory{web}
 
-\defbibheading{libri}{\subsection*{Manuali e Testi consultati}}\defbibheading{web}{\subsection*{Siti Web consultati}}
+\DeclareBibliographyCategory{libri}
+\DeclareBibliographyCategory{web}
+
+\defbibheading{libri}{\subsection*{Manuali e Testi consultati}}
+\defbibheading{web}{\subsection*{Siti Web consultati}}
 
 \addtocategory{libri}{tanenbaum:reti}
 \addtocategory{web}{site:w3cxmlschame}
@@ -39,7 +42,7 @@
 
 \chapter{XML}
 \section{Cos'è un file XML}
-XML è un \textit{linguaggio di markup} e XML sta per e\textbf{X}tensible \textbf{M}arkup \textbf{L}anguage\footnote{vedi \cite{site:w3cxml}} ovvero un linguaggio che consente di definire gli elementi di un documento attraverso meccanismi sintattici.
+XML è un \textit{linguaggio di markup} e XML sta per e\textbf{X}tensible \textbf{M}arkup \textbf{L}anguage\footnote{Standard W3C \cite{site:w3cxml}} ovvero un linguaggio che consente di definire gli elementi di un documento attraverso meccanismi sintattici.
 È derivato dallo standard SGML  ed è pensato per l'utilizzo su larga scala ed è nato per uso legato alla rete anche se poi esteso anche a formato per il salvataggio di file.
 
 Nel 1996 si costituì l’XML Working Group all'interno del W3C per poter definire un linguaggio di markup che offrisse maggior libertà nella definizione dei tag. Questo perchè l'assenza di uno standard abbastanza elastico stava portando i vari sviluppatori di browser a fare "estensioni" non standard creando un potenziale caos nella condivisione dei file nel web.
@@ -47,8 +50,29 @@ Questo gruppo ha creato la struttura di base dell' XML e ha portato alla sua pri
 Questo standar, inizialmente pensato per la trasmissione dei dati attraverso il web, ha avuto risvolti inaspettati. Dopo poco tempo ha infatti permesso lo sviluppo di tutta una serie di formati di file indipendenti dalla trasmissione via web, pensati per il semplice salvataggio. Tra questi ricordiamo: 
 \begin{itemize}
 \item \textbf{ODF} formato di documenti OpenSource. Si struttura come una cartella compressa contenente file XML per la definizione del contenuto del documento\footnote{Standard ISO \cite{site:isoodf} }
-\item \textbf{SVG} formato per le immagini vettoriali. Definisce gli oggetti geometrici attraverso funzioni matematiche. Questo permette di avere immagini "leggibili" da codice e facilemente modificabili con processi automatici, che vanno a leggere il contenuto dell'XML e a modificare i tag di interesse.
+\item \textbf{SVG} formato per le immagini vettoriali. Definisce gli oggetti geometrici attraverso funzioni matematiche. Questo permette di avere immagini "leggibili" da codice e facilemente modificabili con processi automatici, che vanno a leggere il contenuto dell'XML e a modificare i tag di interesse.\footnote{Standard  W3C \cite{site:w3csvg}}
+\item \textbf{X3D} formato per gli oggetti tridimensionali e delle scene in cui tali oggetti esistono. Utilizzato da alcuni programmi di grafica 3D per la visualizzazione web \footnote{Standard W3C \cite{site:w3dx3d}}
 \end{itemize}
+In oltre molti database strutturano i dati in formato XML perchè è più facile elaborarli in tempi costanti e risulta più facilmente adattabile al paradigma del database funzionale.
+
+\subsection{Struttura}
+La struttura di un file XML è sempre la stessa:
+\begin{itemize}
+\item Un \textbf{header}, solitamente sotto la forma di un tag XML,  che indica la versione XML (o derivate) utilizzata per la stesura del documento e la versione della codifica utilizzata nel documento XML
+\item Un \textbf{tag di corpo} contenente tutti gli altri tag strutturati ad albero. In oltre, nel tag di corpo c'è la possibilità che sia anche presente la definizione del namespace utilizzato per la definizione dei tag.
+\end{itemize}
+In più, per essere correttamente visualizzato deve essere \textbf{ben formattato} ovvero
+\begin{itemize}
+\item Ogni etichetta o tag deve essere compreso tra due parentesi angolate (<>) e deve avere il corrispettivo tag di chiusura. Questo può essere realizzato attraverso una coppia di tag (<\textit{etichetta}></ \textit{etichetta}>) o un tag unico che si chiude in se stesso (<\textit{etichetta}/>)
+\item I tag non possono iniziare con numeri o caratteri speciali
+\item I tag non possono contenere spazi (solitamente vengono sostituiti con \_ o semplicemente non vengono messi)
+\item I commenti devono essere definiti nel tag di commento (<!--~\textit{corpo~del~commento}~-->) e possono essere posizionati in ogni punto del documento
+\item I tag devono essere correttamente annidati (vanno chiusi nell'ordine inverso di come sono stati aperti)
+\item I tag sono \textit{case sensitive} quindi bisogna fare attenzione quando definisco i tag (esempio: il tag \textit{PianoForte} è diverso dal tag \textit{Pianoforte} e possono essere utilizzati per indicare tag dalla funzione diversa)
+\end{itemize}
+
+\subsection{Grammatica e definizione degli elementi sintattici}
+Per questo motivo spesso il formato XML viene considerato appartenente al livello di presentazione del modello ISO\footnote{come è scritto anche nel\textcite[p.~42]{tanenbaum:reti} il livello di presentazione come quello di codifica della sintassi dei file per questo motivo viene spesso associato a questo livello}
 
 \section{Standard Generalized Markup Language}
 XML si prefigge di essere una versione semplificata di \textbf{S}tandard \textbf{G}eneralized \textbf{M}arkup \textbf{L}anguage (conosciuto anche come SGML o ISO 8879) da cui deriva.
@@ -56,8 +80,6 @@ Il SGML è un metalinguaggio definito come standard ISO (ISO 8879:1986 SGML) ave
 
 \section{Document Type Definition}
 Il \textbf{D}ocument \textbf{T}ype \textbf{D}efinition (o DTD) permette di descrivere i tag html da utilizzare all'interno di un documento e il loro rapporto reciproco. Questo permette un ampio controllo sul contenuto del documento e semplifica il lavoro di elaborazione di entrambi le parti. 
-
-Infatti se si concordano in anticipo i DTD da utilizzare nella trasmissione dei dati si ottiene un documento XML facilmente leggibile da entrambi le parti. Per questo motivo spesso il formato XML viene considerato appartenente al livello di presentazione del modello ISO\footnote{come è scritto anche nel\textcite[p.~42]{tanenbaum:reti} il livello di presentazione come quello di codifica della sintassi dei file per questo motivo viene spesso associato a questo livello}
 
 \section{XML Schema}
 Successivamente per le definizioni di grammatiche per le applicazioni XML è stato in trodotto il linguaggio XML Schema, pensato apposta per questa funzione. Questo nuovo tipo di documenti permette un maggior controllo nella definizione dei documenti Xml attraverso i namespace ed è l'unico linguaggio di definizione del contenuto per XML approvato dalla W3C (\cite{site:w3cxmlschame} )
@@ -67,6 +89,9 @@ Successivamente per le definizioni di grammatiche per le applicazioni XML è sta
 AJAX è una tecnica di sviluppo software basato sullo scambio dati in backgound tra il client e il server. 
 
 
-\newpage\section*{\refname}\printbibliography[heading=libri, category=libri]\printbibliography[heading=web, category=web]
+\newpage
+\section*{\refname}
+\printbibliography[heading=libri, category=libri]
+\printbibliography[heading=web, category=web]
 
 \end{document}
