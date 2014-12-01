@@ -8,7 +8,7 @@
 %*********************************************************************************
 % Impostazioni di biblatex
 %*********************************************************************************
-\usepackage[bibstyle=alphabetic,citestyle=alphabetic,backend=bibtex]{biblatex}
+\usepackage[bibstyle=numeric,citestyle=numeric,backend=bibtex]{biblatex}
 
 \bibliography{bibliografiareti} 
 
@@ -18,12 +18,6 @@
 
 \defbibheading{libri}{\subsection*{Manuali e Testi consultati}}
 \defbibheading{web}{\subsection*{Siti Web consultati}}
-
-\addtocategory{libri}{tanenbaum:reti}
-\addtocategory{web}{site:w3cxmlschame}
-\addtocategory{web}{site:w3cxml}
-\addtocategory{web}{site:w3csvg}
-\addtocategory{web}{site:isoodf}
 
 
 %*********************************************************************************
@@ -44,7 +38,7 @@
 \chapter{XML}
 \section{Cos'è un file XML}
 XML è un \textit{linguaggio di markup} e XML sta per e\textbf{X}tensible \textbf{M}arkup \textbf{L}anguage\footnote{Standard W3C \cite{site:w3cxml}} ovvero un linguaggio che consente di definire gli elementi di un documento attraverso meccanismi sintattici.
-È derivato dallo standard SGML  ed è pensato per l'utilizzo su larga scala ed è nato per uso legato alla rete anche se poi esteso anche a formato per il salvataggio di file.
+È derivato dallo standard SGML  ed è pensato per formattare informazioni ed è nato per uso legato alla rete anche se poi è stato esteso anche a formato per il salvataggio di file.
 
 \subsection{Storia del XML}
 XML si prefigge di essere una versione semplificata di \textbf{S}tandard \textbf{G}eneralized \textbf{M}arkup \textbf{L}anguage (conosciuto anche come SGML o ISO 8879) da cui deriva.
@@ -104,12 +98,13 @@ Successivamente per le definizioni di grammatiche per le applicazioni XML è sta
 
 
 \chapter{AJAX}
-AJAX è una tecnica di sviluppo software basato sullo scambio dati in backgound tra il client e il server. 
+AJAX è una tecnica di sviluppo software basato sullo scambio dati in backgound tra il client e il server.  Il nome è un acronimo che sta per \textbf{A}synchronous \textbf{J}avaScript \textbf{A}nd \textbf{X}ML spiega anche come è nato.
 
+AJAX nasce come script che permette lo scambio di dati asincrono tra il client e il server, evitando così la richiesta al server da parte del browser e permettendo all'utente di non aggiornare la pagina visualizzata pur avendo una interazione col server. Nonostante il nome suggerisca l'uso di due tecnologie (Javascript e XML per l'appunto) questo non vuole dire che AJAX si limita solo a queste due ma utilizza anche altre tecnologie quali JSON, JScript e VBScript.
 
 \newpage
 \section*{\refname}
-\printbibliography[heading=libri, category=libri]
-\printbibliography[heading=web, category=web]
+\printbibliography[heading=web, nottype=book]
+\printbibliography[heading=libri, type=book]
 
 \end{document}
