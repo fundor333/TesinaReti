@@ -1,17 +1,18 @@
-\documentclass{article}
+\documentclass[a4paper,14pt]{article}
 
 \usepackage[T1]{fontenc}	% imposta la codifica dei font
 \usepackage[utf8]{inputenc}	% lettere accentate da tastiera
 \usepackage[italian]{babel}	% per scrivere in italiano
 \usepackage[babel]{csquotes}
 \usepackage{hyperref}
+\usepackage{graphicx}
 
 %*********************************************************************************
 % Impostazioni di biblatex
 %*********************************************************************************
 \usepackage[bibstyle=alphabetic,citestyle=alphabetic,backend=bibtex]{biblatex}
 
-\bibliography{bibliografiareti} 
+\bibliography{bibliografiareti.bib} 
 
 
 \DeclareBibliographyCategory{libri}
@@ -26,7 +27,6 @@
 %*********************************************************************************
 
 
-\usepackage{graphicx}
 \title{\includegraphics[width=120mm]{logo-unive.png} \\ Xml e Ajax}
 \author{Matteo Scarpa\\ 845087}
 \date{}
@@ -35,7 +35,6 @@
 
 \maketitle
 \newpage
-\tableofcontents
 
 \section{XML}
 \subsection{Cos'è un file XML}
@@ -100,7 +99,7 @@ Successivamente per le definizioni di grammatiche per le applicazioni XML è sta
 
 
 \section{AJAX}
-AJAX è una tecnica di sviluppo software basato sullo scambio dati in backgound tra il client e il server.  Il nome è un acronimo che sta per \textbf{A}synchronous \textbf{J}avaScript \textbf{A}nd \textbf{X}ML spiega anche come è nato.
+AJAX è una tecnica di sviluppo software basato sullo scambio dati in backgound tra il client e il server\footnote{Richiede infatti l'applicazione di un paradigma cliente servente}.  Il nome è un acronimo che sta per \textbf{A}synchronous \textbf{J}avaScript \textbf{A}nd \textbf{X}ML spiega anche come è nato.
 
 AJAX nasce come script che permette lo scambio di dati asincrono tra il client e il server, evitando così la richiesta al server da parte del browser e permettendo all'utente di non aggiornare la pagina visualizzata pur avendo una interazione col server. Nonostante il nome suggerisca l'uso di due tecnologie (Javascript e XML per l'appunto) questo non vuole dire che AJAX si limita solo a queste due ma utilizza anche altre tecnologie quali JSON, JScript e VBScript.
 
@@ -123,10 +122,11 @@ Per quanto riguarda i vantaggi questi sono molteplici:
 
 Per quanto riguardo gli svantaggi sono, per fortuna, pochi e sistemabili seppur parzialmente:
 \begin{itemize}
-\item 
+\item Mancanza di gestione delle pagine da parte della cronologia. La richiesta AJAX non viene registrata da browser direttamente e quindi rende l'utilizzo della cronologia inutile.
+\item Necessitano di script per funzionare. Questo implica che un user\footnote{User è inteso in questo caso come browser/applicativo client richiedente le informazioni} supporti il linguaggio di scripting e che lo abbia abilitato, il che non è sempre vero o possibile.
 \end{itemize}
 
-Questo ha portato a sviluppare nel relitavamente nuovo standard HTML5 la possibilità di modificare la cronologia del browser\footnote{vedi \textcites{site:w3chtml5} per approfondimento} per poter supportare la pagina generata attraverso AJAX. Questo viene infatti fatto perchè i comandi e le richieste degli scipt 
+Questo ha portato a sviluppare nel relitavamente nuovo standard HTML5 la possibilità di modificare la cronologia del browser\footnote{vedi \cites{site:w3chtml5} per approfondimento} per poter supportare la pagina generata attraverso AJAX. Questo viene infatti fatto perchè i comandi e le richieste degli scipt possano aggiungere i propri "eventi" all'interno della cronologia del browser ottenendo così coerenza tra la cronologia e le pagine navigate anche se soltanto aggiornate in parte.
 
 \subsection{XMLHttp} Per realizzare un applicativo AJAX è necessario utilizzare un API o una libreria come XMLHttp che ti permetta di aggiornare la pagina dinamicamente richiedendo i dati al server sotto forma di file XML.\footnote{Ovviamente dal nome è facile capire che questa API permette di lavorare senza problemi sopratutto se il server risponde con file XML anche se supporta il JSON e i testi semplici} 
 La maggior parte dei browser supportano l'API XMLHttp\footnote{vedi \textcites{site:xmlhttpcompatibilita}} anche se alcune versioni di Internet Explorer non lo supportano e usano altre API.
