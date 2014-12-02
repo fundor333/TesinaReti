@@ -1,14 +1,15 @@
-\documentclass{report}
+\documentclass{article}
 
 \usepackage[T1]{fontenc}	% imposta la codifica dei font
 \usepackage[utf8]{inputenc}	% lettere accentate da tastiera
 \usepackage[italian]{babel}	% per scrivere in italiano
 \usepackage[babel]{csquotes}
+\usepackage{hyperref}
 
 %*********************************************************************************
 % Impostazioni di biblatex
 %*********************************************************************************
-\usepackage[bibstyle=numeric,citestyle=numeric,backend=bibtex]{biblatex}
+\usepackage[bibstyle=alphabetic,citestyle=alphabetic,backend=bibtex]{biblatex}
 
 \bibliography{bibliografiareti} 
 
@@ -16,8 +17,8 @@
 \DeclareBibliographyCategory{libri}
 \DeclareBibliographyCategory{web}
 
-\defbibheading{libri}{\subsection*{Manuali e Testi consultati}}
-\defbibheading{web}{\subsection*{Siti Web consultati}}
+\defbibheading{libri}{\subsubsection*{Manuali e Testi consultati}}
+\defbibheading{web}{\subsubsection*{Siti Web consultati}}
 
 
 %*********************************************************************************
@@ -33,14 +34,15 @@
 \begin{document}
 
 \maketitle
+\newpage
 \tableofcontents
 
-\chapter{XML}
-\section{Cos'è un file XML}
+\section{XML}
+\subsection{Cos'è un file XML}
 XML è un \textit{linguaggio di markup} e XML sta per e\textbf{X}tensible \textbf{M}arkup \textbf{L}anguage\footnote{Standard W3C \cite{site:w3cxml}} ovvero un linguaggio che consente di definire gli elementi di un documento attraverso meccanismi sintattici.
 È derivato dallo standard SGML  ed è pensato per formattare informazioni ed è nato per uso legato alla rete anche se poi è stato esteso anche a formato per il salvataggio di file.
 
-\subsection{Storia del XML}
+\subsubsection{Storia del XML}
 XML si prefigge di essere una versione semplificata di \textbf{S}tandard \textbf{G}eneralized \textbf{M}arkup \textbf{L}anguage (conosciuto anche come SGML o ISO 8879) da cui deriva.
 Il SGML è un metalinguaggio definito come standard ISO\footnote{Standard ISO \cite{site:isosgml}}  avente lo scopo di definire linguaggi da utilizzare per la stesura di testi destinati ad essere trasmessi ed archiviati con strumenti informatici, ossia per la stesura di documenti in forma leggibile da computer (machine readable form). Da questo linguaggio XML prende il DTD (o Document Type Definition) che è un documento che definisce le componenti ammesse e come devono essere strutturati.
 
@@ -59,7 +61,7 @@ Tra i vari formati derivati ricordiamo:
 \end{itemize}
 In oltre molti database strutturano i dati in formato XML perchè è più facile elaborarli in tempi costanti e risulta più facilmente adattabile al paradigma del database funzionale.
 
-\subsection{Struttura}
+\subsubsection{Struttura}
 La struttura di un file XML è sempre la stessa:
 \begin{itemize}
 \item Un \textbf{header}, solitamente sotto la forma di un tag XML,  che indica la versione XML (o derivate) utilizzata per la stesura del documento e la versione della codifica utilizzata nel documento XML
@@ -75,7 +77,7 @@ In più, per essere correttamente visualizzato deve essere \textbf{ben formattat
 \item I tag sono \textit{case sensitive} quindi bisogna fare attenzione quando definisco i tag (esempio: il tag \textit{PianoForte} è diverso dal tag \textit{Pianoforte} e possono essere utilizzati per indicare tag dalla funzione diversa)
 \end{itemize}
 
-\section{Grammatica e definizione degli elementi sintattici}
+\subsection{Grammatica e definizione degli elementi sintattici}
 Il formato di file XML per certi punti di vista è molto aperto e permette una grande libertà nei tag pur mantenendo una sintassi stretta e bene definita.
 Questo comporta, però, una definizione di sintassi unica per la rappresentazione dei documenti che bisogna concordare tra gli utilizzatori di quel determinato tipo di documento XML. Questo ha portato alla necessità di definire delle \textbf{grammatiche} ovvero dei documenti che definisco quali sono i tag XML da utilizzare e come all'interno del documento che si ha intenzione di utilizzare.
 
@@ -90,25 +92,48 @@ Questa tipologia di documenti viene definita in un file (solitamente a parte ris
 
 Per questo genere di lavoro sono stati definiti due tipi di file: DTD e il XML Schema 
 
-\subsection{Document Type Definition}
+\subsubsection{Document Type Definition}
 Il \textbf{D}ocument \textbf{T}ype \textbf{D}efinition (o DTD) permette di descrivere i tag html da utilizzare all'interno di un documento e il loro rapporto reciproco. Questo permette un ampio controllo sul contenuto del documento e semplifica il lavoro di elaborazione di entrambi le parti. 
 
-\section{XML Schema}
+\subsection{XML Schema}
 Successivamente per le definizioni di grammatiche per le applicazioni XML è stato in trodotto il linguaggio XML Schema, pensato apposta per questa funzione. Questo nuovo tipo di documenti permette un maggior controllo nella definizione dei documenti Xml attraverso i namespace ed è l'unico linguaggio di definizione del contenuto per XML approvato dalla W3C (\cite{site:w3cxmlschame} )
 
 
-\chapter{AJAX}
+\section{AJAX}
 AJAX è una tecnica di sviluppo software basato sullo scambio dati in backgound tra il client e il server.  Il nome è un acronimo che sta per \textbf{A}synchronous \textbf{J}avaScript \textbf{A}nd \textbf{X}ML spiega anche come è nato.
 
 AJAX nasce come script che permette lo scambio di dati asincrono tra il client e il server, evitando così la richiesta al server da parte del browser e permettendo all'utente di non aggiornare la pagina visualizzata pur avendo una interazione col server. Nonostante il nome suggerisca l'uso di due tecnologie (Javascript e XML per l'appunto) questo non vuole dire che AJAX si limita solo a queste due ma utilizza anche altre tecnologie quali JSON, JScript e VBScript.
 
-Questa tecnica di sviluppo è largamente utilizzata nelle applicazioni web con poca o nessuna richiesta di refresh della pagina ma comunque la necessità di inviare e/o ricevere dati dal server. Spesso infatti si hanno applicazioni che recuperano in tempo reale le informazioni e "aggironano" la pagina con i nuovi dati senza dover riscrivere tutto.
+Questa tecnica di sviluppo è largamente utilizzata nelle applicazioni web con poca o nessuna richiesta di refresh della pagina ma comunque la necessità di inviare e/o ricevere dati dal server. Spesso infatti si hanno applicazioni che recuperano in tempo reale le informazioni e "aggironano" la pagina con i nuovi dati senza dover riscrivere tutto oppure nel caso di pagine particolarmente pesanti di caricare la struttura HTML della pagina e appena sono pronti visualizza i dati richiesti dalla pagina.\footnote{\cites{flanaganjavascript} }
 
-\section{XMLHttp} Per realizzare un applicativo AJAX è necessario utilizzare un API o una libreria come XMLHttp che ti permetta di aggiornare la pagina dinamicamente richiedendo i dati al server sotto forma di file XML.\footnote{Ovviamente dal nome è facile capire che questa API permette di lavorare senza problemi sopratutto se il server risponde con file XML anche se supporta il JSON e i testi semplici} 
-La maggior parte dei browser supportano l'API XMLHttp\footnote{vedi \textcites{site:xmlhttpcompatibilita}}
+Succesivamente è stato definito nel \textcites[pag~491]{flanaganjavascript} come 
+\begin{quotation}
+Ora (AJAX) è semplicemente un termine utile a identificare qualsiasi architettura di una web application basata su script di rischeste HTTP
+\end{quotation}
+
+\subsection{Problemi e vantaggi derivanti da AJAX}
+Come tutte le cose AJAX dispone di vantaggi e di svantaggi.
+
+Per quanto riguarda i vantaggi questi sono molteplici:
+\begin{itemize}
+\item Permette di caricare la struttura della pagina senza i dati. Questo porta ad accellerare i tempi di caricamento della pagina (componente grafica) mentre i dati vengono elaborati in background permettendo all'utente di continuare l'esperienza di navigazione della pagina
+\item Permette di avere i dati aggiornati in tempo reale. Questo permette a dei siti, come ad esempio quelli delle banche, di avere indici o altri dati aggiornati in tempo reale
+\item Permette di riciclare le pagine e di non dover caricare ulteriori pagine se cambiano solo i dati. Infatti se io ho una pagina (intesa come struttura html/php) a cui devo solo refresciare i dati con una versione più aggiornata uso uno script che lo esegue l'aggiornamento dei dati piuttosto che aggiornare l'intera pagina.\footnote{Un esempio di questo tipo di pagina si può trovare nel progetto del gruppo Veneziani DOC (Matteo Scarpa, Andrea Frison, Margherita Rossi) per l'esame di Interazione di Uomo Macchina di CaFoscari \url{http://venezianidoc.github.io/Interazione-Uomo-Macchina/} in cui un javascript aggiorna i dati che comportano modifiche all'ambiente circostanze in base all'anno selezionato}
+\end{itemize}
+
+Per quanto riguardo gli svantaggi sono, per fortuna, pochi e sistemabili seppur parzialmente:
+\begin{itemize}
+\item 
+\end{itemize}
+
+Questo ha portato a sviluppare nel relitavamente nuovo standard HTML5 la possibilità di modificare la cronologia del browser\footnote{vedi \textcites{site:w3chtml5} per approfondimento} per poter supportare la pagina generata attraverso AJAX. Questo viene infatti fatto perchè i comandi e le richieste degli scipt 
+
+\subsection{XMLHttp} Per realizzare un applicativo AJAX è necessario utilizzare un API o una libreria come XMLHttp che ti permetta di aggiornare la pagina dinamicamente richiedendo i dati al server sotto forma di file XML.\footnote{Ovviamente dal nome è facile capire che questa API permette di lavorare senza problemi sopratutto se il server risponde con file XML anche se supporta il JSON e i testi semplici} 
+La maggior parte dei browser supportano l'API XMLHttp\footnote{vedi \textcites{site:xmlhttpcompatibilita}} anche se alcune versioni di Internet Explorer non lo supportano e usano altre API.
+Questa libreria gestisce tutte una serie di funzionalità utili per l'elaborazione delle richieste da inviare al server e per elaborare le risposte ottenute.
 
 \newpage
-\section*{\refname}
+\subsection*{\refname}
 \printbibliography[heading=web, nottype=book]
 \printbibliography[heading=libri, type=book]
 
