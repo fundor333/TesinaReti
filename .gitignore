@@ -1,12 +1,12 @@
-
 *.pdf
 */*.pdf
-Beamer/.texpadtmp
 .dat0ee8.109
-Documentazione/.texpadtmp
 *.aux
 *.bbl
 *.blg
 *.dvi
 *.out
 */.texpadtmp
+*-blx.bib
+*.log
+Documentazione.run.xml
