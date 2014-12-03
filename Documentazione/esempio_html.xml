@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- New document created with EditiX at Fri Sep 28 09:25:20 CEST 2012 -->
+
+<?xml-stylesheet type="text/css" href="esempio.css"?>
+<html xmlns:h="http://www.w3.org/1999/xhtml" lang="it" xml:lang="it">
+<h:h1>Riunione</h:h1>
+
+<lettera xsi:noNamespaceSchemaLocation="lettera.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.business.org">
+<mittente>Romeo Rossi</mittente><h:br/>
+<data>2012-09-28</data>
+<br/>
+<destinatario>Giulietta Verdi</destinatario>
+<p>
+<oggetto>Riunione operativa</oggetto>
+<forma_cortesia>Egregia Dott.ssa Verdi </forma_cortesia>
+<corpo>
+<paragrafo>come da accordi telefonici, indico la riunione operativa per il 3 ottobre 2012 alle ore 10:00. Prego di portare tutti i documenti relativi al progetto
+.
+<h:br/>Nota: per informazioni ulteriori si veda a questo <h:a href="http://www.unive.it">link</h:a>
+</paragrafo>
+</corpo>
+<chiusura>Cordiali Saluti
+</chiusura>
+</p>
+<firma>Romeo Rossi
+</firma>
+</lettera>
+</html>
