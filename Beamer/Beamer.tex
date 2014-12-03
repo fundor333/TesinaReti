@@ -34,19 +34,46 @@
     \end{itemize}
 \end{frame}
 
-\subsection{Storia del XML}
 \begin{frame}
+    \frametitle{Come è nato l'XML}
     \begin{itemize}
     \item Deriva da SGML, un linguaggio di markup
-    \item Viene creato durante la guerra dei browser
-    \item Inizialmente è pensato solo per formattare i dati per l'invio
+    \item Inizia ad essere sviluppato nel 1996
+    \item Definito come standard nel 1998
+    \item Viene creato per definire uno standard
+    \item Inizialmente è pensato solo per formattare i dati per la rete
+    \end{itemize}
+
+\end{frame}
+
+\subsection{Struttura di un XML}
+\begin{frame}
+    \frametitle{Struttura del XML}
+    \begin{itemize}
+        \item Header
+        \item Tag principale
+        \begin{itemize}
+            \item Tag secondari
+            \item Tag secondari annidati
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Vincoli sintattici}
+    Per poter passare la validazione devono:
+    \begin{itemize}
+    \item Ogni tag deve essere compreso tra due parentesi angolate 
+    \item Ogni tag deve essere chiuso con \/ o avere il tag di chiusura
+    \item I tag non possono iniziare con numeri 
+    \item I tag non possono iniziare con caratteri speciali
+    \item I tag non possono contenere spazi 
+    \item I tag devono essere correttamente annidati 
     \end{itemize}
 
 \end{frame}
 
 
-
-\subsection{Esempio di XML}
 \begin{frame}[fragile]
     \frametitle{Esempio di XML}
     \begin{verbatim}
