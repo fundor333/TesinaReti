@@ -36,6 +36,8 @@
 
 \maketitle
 \newpage
+\tableofcontents
+\newpage
 
 \chapter{XML}
 \section{Cos'è un file XML}
@@ -213,8 +215,10 @@ Questa tecnica di sviluppo è largamente utilizzata nelle applicazioni web con p
 
 Succesivamente è stato definito nel \textcites[pag~491]{flanaganjavascript} come 
 \begin{quotation}
-Ora (AJAX) è semplicemente un termine utile a identificare qualsiasi architettura di una web application basata su script di rischeste HTTP
+Ora (AJAX) è semplicemente un termine utile a identificare qualsiasi architettura di una web application basata su script di rischeste HTTP.
 \end{quotation}
+
+Questo dimostra come la tecnica risulta essere efficace ed è stato necessario estenderla ad altri linguaggi di scripting in quanto solo il javascript non è sufficiente.
 
 \section{Problemi e vantaggi derivanti da AJAX}
 Come tutte le cose AJAX dispone di vantaggi e di svantaggi.
@@ -237,8 +241,6 @@ Questo ha portato a sviluppare nel relitavamente nuovo standard HTML5 la possibi
 \section{XMLHttp} Per realizzare un applicativo AJAX è necessario utilizzare un API o una libreria come XMLHttp che ti permetta di aggiornare la pagina dinamicamente richiedendo i dati al server sotto forma di file XML.\footnote{Ovviamente dal nome è facile capire che questa API permette di lavorare senza problemi sopratutto se il server risponde con file XML anche se supporta il JSON e i testi semplici} 
 La maggior parte dei browser supportano l'API XMLHttp\footnote{vedi \textcites{site:xmlhttpcompatibilita}} anche se alcune versioni di Internet Explorer non lo supportano e usano altre API.
 Questa libreria gestisce tutte una serie di funzionalità utili per l'elaborazione delle richieste da inviare al server e per elaborare le risposte ottenute.
-
-%TODO Aggiungere i vari comandi di XMLHttp per spiegare come funziona l'API
 
 \newpage
 \section*{\refname}
