@@ -140,7 +140,6 @@ xmlns="http://www.business.org">
 come da accordi telefonici, indico la riunione operativa 
 per il 3 ottobre 2012 alle ore 10:00. 
 Prego di portare tutti i documenti relativi al progetto
-.
 <h:br/>Nota: per informazioni ulteriori si veda a questo 
 <h:a href="http://www.unive.it">link</h:a>
 </paragrafo>
@@ -209,7 +208,7 @@ Successivamente per le definizioni di grammatiche per le applicazioni XML è sta
 \chapter{AJAX}
 AJAX è una tecnica di sviluppo software basato sullo scambio dati in backgound tra il client e il server\footnote{Richiede infatti l'applicazione di un paradigma cliente servente}.  Il nome è un acronimo che sta per \textbf{A}synchronous \textbf{J}avaScript \textbf{A}nd \textbf{X}ML spiega anche come è nato.
 
-AJAX nasce come script che permette lo scambio di dati asincrono tra il client e il server, evitando così la richiesta al server da parte del browser e permettendo all'utente di non aggiornare la pagina visualizzata pur avendo una interazione col server. Nonostante il nome suggerisca l'uso di due tecnologie (Javascript e XML per l'appunto) questo non vuole dire che AJAX si limita solo a queste due ma utilizza anche altre tecnologie quali JSON, JScript e VBScript.
+AJAX nasce come tecnica di scripting che permette lo scambio di dati asincrono tra il client e il server, evitando così la richiesta al server da parte del browser e permettendo all'utente di non aggiornare la pagina visualizzata pur avendo una interazione col server. Nonostante il nome suggerisca l'uso di due tecnologie (Javascript e XML per l'appunto) questo non vuole dire che AJAX si limita solo a queste due ma utilizza anche altre tecnologie quali JSON, JScript e VBScript.
 
 Questa tecnica di sviluppo è largamente utilizzata nelle applicazioni web con poca o nessuna richiesta di refresh della pagina ma comunque la necessità di inviare e/o ricevere dati dal server. Spesso infatti si hanno applicazioni che recuperano in tempo reale le informazioni e "aggironano" la pagina con i nuovi dati senza dover riscrivere tutto oppure nel caso di pagine particolarmente pesanti di caricare la struttura HTML della pagina e appena sono pronti visualizza i dati richiesti dalla pagina.\footnote{Vedi \cites{flanaganjavascript} }
 
@@ -219,6 +218,10 @@ Ora (AJAX) è semplicemente un termine utile a identificare qualsiasi architettu
 \end{quotation}
 
 Questo dimostra come la tecnica risulta essere efficace ed è stato necessario estenderla ad altri linguaggi di scripting in quanto solo il javascript non è sufficiente.
+
+\section{XMLHttp} Per realizzare un applicativo AJAX è necessario utilizzare un API o una libreria come XMLHttp che ti permetta di aggiornare la pagina dinamicamente richiedendo i dati al server sotto forma di file XML.\footnote{Ovviamente dal nome è facile capire che questa API permette di lavorare senza problemi sopratutto se il server risponde con file XML anche se supporta il JSON e i testi semplici} 
+La maggior parte dei browser supportano l'API XMLHttp\footnote{vedi \textcites{site:xmlhttpcompatibilita}} anche se alcune versioni di Internet Explorer non lo supportano e usano altre API.
+Questa libreria gestisce tutte una serie di funzionalità utili per l'elaborazione delle richieste da inviare al server e per elaborare le risposte ottenute.
 
 \section{Problemi e vantaggi derivanti da AJAX}
 Come tutte le cose AJAX dispone di vantaggi e di svantaggi.
@@ -237,10 +240,6 @@ Per quanto riguardo gli svantaggi sono, per fortuna, pochi e sistemabili seppur 
 \end{itemize}
 
 Questo ha portato a sviluppare nel relitavamente nuovo standard HTML5 la possibilità di modificare la cronologia del browser\footnote{vedi \cites{site:w3chtml5} per approfondimento} per poter supportare la pagina generata attraverso AJAX. Questo viene infatti fatto perchè i comandi e le richieste degli scipt possano aggiungere i propri "eventi" all'interno della cronologia del browser ottenendo così coerenza tra la cronologia e le pagine navigate anche se soltanto aggiornate in parte.
-
-\section{XMLHttp} Per realizzare un applicativo AJAX è necessario utilizzare un API o una libreria come XMLHttp che ti permetta di aggiornare la pagina dinamicamente richiedendo i dati al server sotto forma di file XML.\footnote{Ovviamente dal nome è facile capire che questa API permette di lavorare senza problemi sopratutto se il server risponde con file XML anche se supporta il JSON e i testi semplici} 
-La maggior parte dei browser supportano l'API XMLHttp\footnote{vedi \textcites{site:xmlhttpcompatibilita}} anche se alcune versioni di Internet Explorer non lo supportano e usano altre API.
-Questa libreria gestisce tutte una serie di funzionalità utili per l'elaborazione delle richieste da inviare al server e per elaborare le risposte ottenute.
 
 \newpage
 \section*{\refname}

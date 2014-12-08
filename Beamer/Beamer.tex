@@ -22,7 +22,7 @@
 
 \section{XML}
 
-\subsection{Cos'è un file XML}
+\subsection{XML}
 \begin{frame}
     \frametitle{Cos'è XML}
     \begin{itemize}
@@ -46,7 +46,6 @@
 
 \end{frame}
 
-\subsection{Struttura di un XML}
 \begin{frame}
     \frametitle{Struttura del XML}
     \begin{itemize}
@@ -76,33 +75,124 @@
 \begin{frame}[fragile]
     \frametitle{Esempio di XML}
     \begin{verbatim}
-<DataModelElement xsi:type="webml:Entity" id="0" >       
-    <Attribute id="1" name="OID" type="OID" /> 
-    <Attribute id="2" name="Name"/> 
-    <Attribute id="3" name="Psw"/> 
-    <Attribute id="4" name="Email" contentType=""/> 
-</DataModelElement> 
+<note>
+    <to>Mamma</to> 
+    <from>Matteo</from> 
+    <heading>Cena</heading> 
+    <body>Dormo da amici e non ceno a casa. Baci Teo</body> 
+</note> 
     \end{verbatim}
 \end{frame}
 
-\subsection{XSLT}
-\subsection{Esempio di output di XSLT}
-\subsection{Document Type Definition}
-\subsection{XML Schema}
-\subsubsection{Esempio di XMLS}
+\begin{frame}
+    \frametitle{XSLT}
+    \begin{itemize}
+    \item <1->E\textbf{X}tensible \textbf{S}tylesheet \textbf{L}anguage \textbf{T}ransformations
+    \item <2-> Trasforma XML in formato più leggibile
+    \item <3-> Più pratico dell' elaborazioni via script
+    \item <4-> Output in XHTML e XML elaborato
+    \end{itemize}
+\end{frame}
+
+\subsection{Grammatiche}
+\begin{frame}
+    \frametitle{Funzionalità della grammatica}
+    Definisce
+    \begin{itemize}
+        \item<2-> Qual'è il tag radice
+        \item<3-> Quali e quanti tag sono sotto a un determinato tag
+        \item<4-> Quali attributi possono avere i vari tag
+        \item<5-> Quali tag non possono mancare 
+        \item<6-> Valida il documento XML
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{DTD}
+    \begin{itemize}
+    \item <1-> \textbf{D}ocument \textbf{T}ype \textbf{D}efinition
+    \item <2-> Definisce vincoli sintattici del documento
+    \item <3-> Deriva dal SGML
+    \item <5-> Non è lo standard per XML
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+\begin{itemize}
+    \item <1-> Standard ufficiale W3C per definire la sintassi XML
+    \item <2-> Utilizza i namespace per definire i tag
+    \item <3-> Più efficente del DTD in quanto pensato per XML
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Esempio di XMLS}
+\begin{verbatim}
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="note">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="to" type="xs:string"/>
+      <xs:element name="from" type="xs:string"/>
+      <xs:element name="heading" type="xs:string"/>
+      <xs:element name="body" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+</xs:schema>
+\end{verbatim}
+\end{frame}
+
 
 \section{AJAX}
-\subsection{Cos'è Ajax}
-
+\subsection{Ajax}
 \begin{frame}
     \frametitle{Cos'è Ajax}
     \begin{itemize}
-    \item \textbf{A}synchronous \textbf{J}avaScript \textbf{A}nd \textbf{X}ML
+    \item <1-> \textbf{A}synchronous \textbf{J}avaScript \textbf{A}nd \textbf{X}ML
+    \item <2-> Metodo di programmazione 
+    \item <3-> Prevede uno script e un server che elabori la richiesta
+    \item <4-> Non si usa sempre Javascript e XML
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{XMLHttp}
+    \begin{itemize}
+    \item <1-> API per fare e ricevere richieste HTTP
+    \item <2-> Lavora per lo più con il formato XML
+    \item <3-> Standard "de facto" per le richieste da script
     \end{itemize}
 
 \end{frame}
 
-\subsection{Problemi e vantaggi derivanti da AJAX}
-\subsection{XMLHttp} 
+
+\subsection{Vantaggi e Svantaggi}
+\begin{frame}
+    \frametitle{Vantaggi AJAX}
+    \begin{itemize}
+    \item<1-> Permette di caricare la struttura della pagina senza i dati    
+    \item<2-> Permette di aggiornare i dati in tempo reale
+    \item<3-> Permette di riciclare le pagine
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Problemi di AJAX}
+    \begin{itemize}
+    \item<1-> La cronologia non registra i cambiamenti delle pagine prodotti con AJAX
+    \begin{itemize}
+        \item <3-> HTML5 supporta l'inserimento di eventi nella cronologia
+        \item <3-> Impostabile da script
+    \end{itemize}
+    \item<2-> Le pagine AJAX necessitano di un linguaggio di scripting per funzionare
+    \begin{itemize}
+        \item <4-> Usare solo linguaggi ampiamente diffusi
+        \item <4-> Posizionare testo alternativo in assenza di script
+    \end{itemize}
+    \end{itemize}
+\end{frame}
+
 
 \end{document}
